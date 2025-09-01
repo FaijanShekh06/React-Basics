@@ -4,6 +4,8 @@ import Footer from "./components/Footer";
 import Card from "./components/Card";
 import Contact from "./components/Contact";
 import Api from "./components/Api";
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
 
 const App = () => {
   const contacts = [
@@ -114,6 +116,15 @@ const App = () => {
 
   return (
     <>
+      <Header />
+      {/* React Router DOM */}
+      <Routes>
+        <Route path="/navbar" element={<Navbar />} />
+        <Route path="/card" element={<Card />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/api" element={<Api />} />
+      </Routes>
+
       <Navbar />
       <div className="p-10">
         {users.map(function (elem, indx) {
