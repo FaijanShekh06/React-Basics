@@ -6,8 +6,11 @@ import Contact from "./components/Contact";
 import Api from "./components/Api";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
+import { DataContext } from "./Context/UserContext";
 
 const App = () => {
+  const data = React.useContext(DataContext);
+  console.log(data);
   const contacts = [
     {
       name: "Beyonce",
@@ -124,7 +127,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/api" element={<Api />} />
       </Routes>
-
+      <h1>This is App.js {data}</h1>
       <Navbar />
       <div className="p-10">
         {users.map(function (elem, indx) {
